@@ -1,0 +1,131 @@
+.img-container {
+    float: left;
+    width: 50%;
+  }
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.navbar {
+  padding: 30px;
+  background-color: white !important;
+}
+
+.navbar-brand { 
+  font-family: "Century Gothic";
+  font-size: xx-large;
+  font-weight: bolder;
+  color: red !important;
+}
+
+.nav-item {
+  font-family: 'Century Gothic';
+}
+
+
+.Ad-Image {
+  width: 1349.2px;
+  height: 700px;
+  padding-bottom: 50px;
+  
+}
+.recommendations {
+  padding: 30px 40px 30px 80px;
+}
+
+.small-image {
+  padding: 15px;
+  border-radius: 15%;
+  width: 300px;
+  height: 300px;
+}
+
+h6 {
+  font-family: "Century Gothic";
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.recommendation-group {
+  font-family: "Century Gothic";
+  font-size: large;
+  text-align: center;
+}
+
+.restaurant-name {
+  text-align: center !important;
+  color: black;
+ 
+}
+
+.footer li {
+  display:inline;
+  padding: 10px 40px;
+  color: black;
+  
+}
+
+.recommendations {
+  height: 450px;
+  width: auto;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y:hidden ;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-bottom: 90px;
+  list-style: none;
+ 
+
+}
+
+.recommendation-item {
+  padding: 10px;
+  object-fit: cover;
+  font-family: "Century Gothic";
+ 
+}
+
+.container-1 {
+  padding: 50px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.text {
+  flex: 1;
+  padding: 20px;
+}
+.individual-image {
+  flex: 1;
+  padding: 20px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+rest-header {
+  display: inline;
+}
+
+.fa {
+  font-size: 20px;
+}
+
+.fa-star {
+  color: #bbb;
+}
+
+.checked {
+  color: orange;
+}
+
+.card-list {
+  padding-left: 20px;
+}
+1][AS]

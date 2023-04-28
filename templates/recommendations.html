@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>foodies.com | We be eating!</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href ="C:\Users\Karen\Flatiron\dsc-data-science-env-config\course_materials\Phase_5\Deployment\static\style.css"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+  </head>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{{url_for('home')}}">EATOUT 2.0   <i class="fa fa-cutlery" aria-hidden="true"></i>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+<body>
+
+    <ul class = "recommendations">
+        {% for index, row in recs_df.iterrows() %}
+          <li class="card-list">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="{{ row.image }}" width="240px" height="250px" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-title">{{ row.restaurant }}</p>
+                <div class="star-rating" style="text-align: left;">
+                  {% for i in range(row.rating) %}
+                    <span class="fa fa-star checked"></span>
+                  {% endfor %}
+                  {% for i in range(5 - row.rating) %}
+                    <span class="fa fa-star"></span>
+                  {% endfor %}
+                </div>
+                <div class="col-md-12 text-center">
+                  <a href="{{url_for('view_restaurant', rest_id = index)}}" class="btn btn-light">See more</a>
+                </div>
+                
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+
+<!-- footer -->
+<footer style="background-color: black; padding: 80px;">
+  <p style="text-align: center; font-size: 14px; color: #666;">&copy; 2023 The Foodies. All rights reserved.</p>
+  <nav>
+    <ul class ="footer" style="display: flex; justify-content: center;">
+      <li style="color: #666;"><a href="{{url_for('home')}}">Back to Top</a></li>
+      <li><a href="#">About us</a></li>
+      <li><a href="#">Github</a></li>
+    </ul>
+  </nav>
+</footer>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='recommend.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
