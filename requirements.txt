@@ -1,4 +1,4 @@
-
+numpy==1.24.3
 async-generator==1.10
 async-timeout==3.0.1
 backports.functools-lru-cache==1.6.1
